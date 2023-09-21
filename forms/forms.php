@@ -70,11 +70,39 @@ class forms{
  <div class="col-md-6">
     <div class="h-100 p-5 bg-body-tertiary border rounded-3">
        <form action="" method="POST">
-          <div class="mb-3 form-group">
-             <label for="exampleInputEmail1">Email address</label>
-             <input type="email" name="email_address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
+
+       <div class="mb-3 form-group">
+               <label for="fullname">Full Name</label>
+               <input type="text" name="fullname" class="form-control" id="fullname" placeholder="John Doe">
+            </div>
+
+            <div class="mb-3 form-group">
+               <label for="exampleInputEmail1">Email Address</label>
+               <input type="email" name="email_address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+
+            <div class="mb-3 form-group">
+               <label for="password">Password</label>
+               <input type="password" name="password" class="form-control" id="password"  placeholder="********">
+            
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           <button type="submit" name="signup" class="btn btn-primary">Sign Up</button>
        </form>
     </div>
