@@ -69,7 +69,7 @@ class forms{
 <div class="row align-items-md-stretch">
  <div class="col-md-6">
     <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-       <form action="" method="POST">
+             <form action="" method="POST">
 
        <div class="mb-3 form-group">
                <label for="fullname">Full Name</label>
@@ -87,23 +87,22 @@ class forms{
                <input type="password" name="password" class="form-control" id="password"  placeholder="********">
             
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <button type="submit" name="signup" class="btn btn-primary">Sign Up</button>
+            <?php
+                $user_id = $_SESSION['user_id']; 
+                if ($user_id) {
+                    $table = "users";
+                    $user_data = $MYSQL->select($table, "*", "WHERE id = $user_id");
+                    if ($user_data) {
+                        echo "<p>Full Name: " . htmlspecialchars($user_data[0]['fullname']) . "</p>";
+                        echo "<p>Email Address: " . htmlspecialchars($user_data[0]['email_address']) . "</p>";
+                        } else {
+                        echo "<p>User not found.</p>";
+                    }
+                } else {
+                    echo "<p>User not authenticated.</p>";
+                }
+                ?>
+         <button type="submit" name="signup" class="btn btn-primary">Sign Up</button>
        </form>
     </div>
  </div>
