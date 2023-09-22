@@ -1,37 +1,61 @@
 <?php
 
 class forms{
-    public function sign_in_form(){
-        ?>
-<div class="row align-items-md-stretch">
-   <div class="col-md-6">
-      <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-         <form action="" method="POST">
-         <div class="mb-3">
-               <label for="exampleInputEmail1">Email address</label>
-               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  public function sign_in_form(){
+      ?
+    if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signin"])) {
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        if ($this->authenticateUser($email, $password)) {
+            header("Location: dashboard.php");
+            exit();
+        } else {
+            echo "<p class='text-danger'>Invalid email or password.</p>";
+        }
+    }
+    ?>
+    <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+            <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+                <form action="" method="POST">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                    </div>
+                    <button type="submit" name="signin" class="btn btn-primary">Sign In</button>
+                </form>
             </div>
-            <div class="mb-3">
-               <label for="exampleInputPassword1">Password</label>
-               <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="col-md-6">
+            <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+                <h2>Useful Instructions</h2>
+                <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
+                <button class="btn btn-outline-secondary" type="button">Example button</button>
             </div>
-            <div class="mb-3 form-check">
-               <input type="checkbox" class="form-check-input" id="exampleCheck1">
-               <label class="form-check-label" for="exampleCheck1">Remeber Me</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Sign In</button>
-         </form>
-      </div>
-   </div>
-   <div class="col-md-6">
-      <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-         <h2>Useful Instructions</h2>
-         <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
-         <button class="btn btn-outline-secondary" type="button">Example button</button>
-      </div>
-   </div>
-</div>
+        </div>
+    </div>
+    <?php
+}
+
+private function authenticateUser($email, $password) {
+    // Implement your authentication logic here (e.g., querying a database)
+    // Return true if authentication is successful, false otherwise
+    // Replace this with your actual authentication logic
+    $validEmail = "user@example.com";
+    $validPassword = "password";
+
+    return ($email === $validEmail && $password === $validPassword);
+}
+
         <?php
     }
     public function sign_up_form(){
