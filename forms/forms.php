@@ -64,7 +64,7 @@ class forms{
         <?php
     }
 
-    public function sign_up_completion_form(){
+    public function sign_up_completion_form($fullname, $email_address){
       ?>
 <div class="row align-items-md-stretch">
  <div class="col-md-6">
@@ -73,12 +73,12 @@ class forms{
 
        <div class="mb-3 form-group">
                <label for="fullname">Full Name</label>
-               <input type="text" name="fullname" class="form-control" id="fullname" placeholder="John Doe">
+               <input type="text" name="fullname" class="form-control" id="fullname" placeholder="John Doe" value="<?php echo $fullname ?>" readonly>
             </div>
 
             <div class="mb-3 form-group">
                <label for="exampleInputEmail1">Email Address</label>
-               <input type="email" name="email_address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+               <input type="email" name="email_address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value="<?php echo $email_address ?>" readonly>
                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
 
@@ -87,22 +87,6 @@ class forms{
                <input type="password" name="password" class="form-control" id="password"  placeholder="********">
             
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           <button type="submit" name="signup" class="btn btn-primary">Sign Up</button>
        </form>
     </div>
