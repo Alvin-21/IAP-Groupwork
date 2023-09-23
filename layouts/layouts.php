@@ -137,7 +137,7 @@
                            <li class="nav-item"><a class="nav-link" href="mail.php">Send Mail</a></li>
                            <li class="nav-item"><a class="nav-link" href="#">Enterprise</a></li>
                            <li class="nav-item"><a class="nav-link" href="#">Support</a></li>
-                           <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
+                           <li class="nav-item"><a class="nav-link" href="contactus.php">Contact Us</a></li>
                            <li class="nav-item"><a class="nav-link" href="signin.php">Sign In</a></li>
                            <li class="nav-item"><a class="nav-link" href="signup.php">Sign Up</a></li>
                            <li class="nav-item">

@@ -71,7 +71,7 @@ class forms{
     <div class="h-100 p-5 bg-body-tertiary border rounded-3">
        <form action="" method="POST">
 
-       <div class="mb-3 form-group">
+            <div class="mb-3 form-group">
                <label for="fullname">Full Name</label>
                <input type="text" name="fullname" class="form-control" id="fullname" placeholder="John Doe" value="<?php echo $fullname ?>" readonly>
             </div>
