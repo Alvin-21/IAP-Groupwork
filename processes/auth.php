@@ -47,4 +47,18 @@ class auth{
             exit();
         }
     }
+
+    public function sign_in($MYSQL){
+        if(isset($_POST["signin"])){
+            $email_address = $_POST["email_address"];
+            $password = md5($_POST["password"]);
+            $sql = "SELECT * FROM users WHERE email_address='$email_address' AND password='$password'";
+            $count = $MYSQL->count_results($sql);
+            
+            if ($count == 1) {
+                header("Location: about.php");
+                exit();
+            }   
+        }
+    }
 }

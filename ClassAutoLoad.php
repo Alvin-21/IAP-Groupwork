@@ -35,3 +35,4 @@ $OBJ_Proc = NEW auth();
 // Call methods
 $OBJ_Proc->receive_sign_up($MYSQL, $OBJ_SendMail, $lang, $conf);
 $OBJ_Proc->sign_up_completion($MYSQL);
+$OBJ_Proc->sign_in($MYSQL);
