@@ -49,7 +49,8 @@ class forms{
                <input type="email" name="email_address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
-            <button type="submit" name="signup" class="btn btn-primary">Sign Up</button>
+            <button type="submit" aria-describedby="submitHelp" name="signup" class="btn btn-primary">Sign Up</button> <br>
+            <small id="submitHelp" class="form-text text-muted">Check your email after signing up.</small>
          </form>
       </div>
    </div>
@@ -125,7 +126,7 @@ class forms{
                   <textarea placeholder="Enter the message" class="form-control form-control-md" name="textMessage" id="subject" required style="height:170px" ></textarea>
                </div>
                <div>
-                  <input class="btn btn-primary" type="submit" name="send_message"  value="Send Message">
+                  <input class="btn btn-primary" type="submit" name="send_message"  value="Send Message" disabled>
                </div>
             </form>
       </div>

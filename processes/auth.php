@@ -56,7 +56,7 @@ class auth{
             $count = $MYSQL->count_results($sql);
             
             if ($count == 1) {
-                header("Location: about.php");
+                header("Location: listUsers.php");
                 exit();
             }   
         }
