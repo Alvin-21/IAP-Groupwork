@@ -135,7 +135,7 @@
                            <li class="nav-item"><a class="nav-link" href="./">Home</a></li>
                            <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
                            <li class="nav-item"><a class="nav-link" href="mail.php">Send Mail</a></li>
-                           <li class="nav-item"><a class="nav-link" href="#">Enterprise</a></li>
+                           <li class="nav-item"><a class="nav-link" href="listUsers.php">Users</a></li>
                            <li class="nav-item"><a class="nav-link" href="#">Support</a></li>
                            <li class="nav-item"><a class="nav-link" href="contactus.php">Contact Us</a></li>
                            <li class="nav-item"><a class="nav-link" href="signin.php">Sign In</a></li>
@@ -165,6 +165,28 @@
             </div>
             <?php
                }
+               public function listUsers($result, $count){
+                  ?>
+           <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+              <div class="container-fluid py-5">
+                 <h1 class="display-5 fw-bold">List of Users</h1>
+                 <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
+                 <ol>
+                  <?php
+
+                     $i = 0;
+                     while($i < $count){
+                        $name = $result["fullname"];
+                        $email_address = $result["email_address"];
+                  ?>
+                     <li><?php echo $name ." ". $email_address; $i++; ?></li>
+
+                  <?php } ?>
+                  </ol>
+              </div>
+           </div>
+           <?php
+              }
                public function footer($conf){
                    ?>
             <footer class="pt-3 mt-4 text-body-secondary border-top">
