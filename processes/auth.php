@@ -34,4 +34,17 @@ class auth{
             }
         }
     }
+
+    public function sign_up_completion($MYSQL){
+        if(isset($_POST["signupcompletion"])){
+            $email_address = $_POST["email_address"];
+            $password = md5($_POST["password"]);
+            $data = array('password' => $password);
+            $table = "users";
+            $where = "email_address = '$email_address'";
+            $MYSQL->update($table, $data, $where);
+            header("Location: signin.php");
+            exit();
+        }
+    }
 }
