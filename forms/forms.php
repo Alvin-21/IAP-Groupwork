@@ -18,7 +18,7 @@ class forms{
             </div>
             <div class="mb-3 form-check">
                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-               <label class="form-check-label" for="exampleCheck1">Remeber Me</label>
+               <label class="form-check-label" for="exampleCheck1">Remember Me</label>
             </div>
             <button type="submit" name="signin" class="btn btn-primary">Sign In</button>
          </form>
