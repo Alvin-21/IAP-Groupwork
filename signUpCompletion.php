@@ -4,7 +4,7 @@
         $OBJ_Layout->headers($conf);
         $OBJ_Layout->logo($conf);
         $OBJ_Layout->navigation();
-        $OBJ_Layout->banner();
+        // $OBJ_Layout->banner();
 
         $email_address = $_GET['email_address'];
         $query = "select * from users where email_address='".$email_address."'";

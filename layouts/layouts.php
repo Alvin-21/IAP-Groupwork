@@ -170,8 +170,7 @@
            <div class="p-5 mb-4 bg-body-tertiary rounded-3">
               <div class="container-fluid py-5">
                  <h1 class="display-5 fw-bold">List of Users</h1>
-                 <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
-                 <ol>
+                 <ol class="col-md-8 fs-4">
                   <?php
 
                      $i = 0;
@@ -179,7 +178,7 @@
                         $name = $result["fullname"];
                         $email_address = $result["email_address"];
                   ?>
-                     <li><?php echo $name ." ". $email_address; $i++; ?></li>
+                     <li><?php echo $name .", ". $email_address; $i++; ?></li>
 
                   <?php } ?>
                   </ol>
